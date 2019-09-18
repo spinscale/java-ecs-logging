@@ -96,9 +96,9 @@ public abstract class AbstractEcsLoggingTest {
     @Test
     void testLogOrigin() throws Exception {
         debug("test");
-        assertThat(getLastLogLine().get("log.origin").get("file").textValue()).endsWith(".java");
+        assertThat(getLastLogLine().get("log.origin").get("file.name").textValue()).endsWith(".java");
         assertThat(getLastLogLine().get("log.origin").get("function").textValue()).isEqualTo("debug");
-        assertThat(getLastLogLine().get("log.origin").get("line").intValue()).isPositive();
+        assertThat(getLastLogLine().get("log.origin").get("file.line").intValue()).isPositive();
     }
 
     public abstract void putMdc(String key, String value);

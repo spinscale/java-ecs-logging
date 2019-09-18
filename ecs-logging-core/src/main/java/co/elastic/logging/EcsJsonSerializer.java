@@ -127,13 +127,13 @@ public class EcsJsonSerializer {
 
     public static void serializeOrigin(StringBuilder builder, String fileName, String methodName, int lineNumber) {
         builder.append("\"log.origin\":{");
-        builder.append("\"file\":\"");
+        builder.append("\"file.name\":\"");
         JsonUtils.quoteAsString(fileName, builder);
         builder.append("\",");
         builder.append("\"function\":\"");
         JsonUtils.quoteAsString(methodName, builder);
         builder.append("\",");
-        builder.append("\"line\":");
+        builder.append("\"file.line\":");
         builder.append(lineNumber);
         builder.append("},");
     }
